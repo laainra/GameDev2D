@@ -1,10 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3sidtv76vyop"]
+[gd_scene load_steps=5 format=3 uid="uid://c3sidtv76vyop"]
 
+[ext_resource type="PackedScene" uid="uid://djtwpx48qp0rw" path="res://player.tscn" id="1_c7su6"]
 [ext_resource type="PackedScene" uid="uid://cy001ba50ky11" path="res://map.tscn" id="1_qyqf2"]
 [ext_resource type="PackedScene" uid="uid://8bgsonhyqn0t" path="res://bg.tscn" id="2_c7khv"]
+[ext_resource type="AudioStream" uid="uid://dlf2ym4imsmk5" path="res://ASSETS/main musi.mp3" id="4_k2do7"]
 
 [node name="main" type="Node2D"]
 
-[node name="map" parent="." instance=ExtResource("1_qyqf2")]
+[node name="player" parent="." instance=ExtResource("1_c7su6")]
+position = Vector2(-917, 480)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+scale = Vector2(-110897, -808.772)
 
 [node name="BG" parent="." instance=ExtResource("2_c7khv")]
+
+[node name="map" parent="." instance=ExtResource("1_qyqf2")]
+position = Vector2(-171, 45)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_k2do7")
+autoplay = true

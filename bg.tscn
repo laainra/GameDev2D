@@ -1,13 +1,74 @@
-[gd_scene load_steps=2 format=3 uid="uid://8bgsonhyqn0t"]
+[gd_scene load_steps=11 format=3 uid="uid://8bgsonhyqn0t"]
 
-[ext_resource type="Texture2D" uid="uid://jtqiq8nwdqe3" path="res://sunny-land/assets/environment/back.png" id="1_tqbka"]
+[ext_resource type="Script" path="res://bg.gd" id="1_bdokl"]
+[ext_resource type="Texture2D" uid="uid://spgjn4vhhd46" path="res://parallax_mountain_pack/layers/parallax-mountain-bg.png" id="2_31imr"]
+[ext_resource type="Script" path="res://gunung.gd" id="3_261pd"]
+[ext_resource type="Texture2D" uid="uid://c3dobhmx5bd5n" path="res://parallax_mountain_pack/layers/parallax-mountain-montain-far.png" id="3_u5owf"]
+[ext_resource type="Texture2D" uid="uid://3qtso71ggb15" path="res://parallax_mountain_pack/layers/parallax-mountain-mountains.png" id="4_dywbg"]
+[ext_resource type="Texture2D" uid="uid://cc5h5kkb80ymp" path="res://parallax_mountain_pack/layers/parallax-mountain-trees.png" id="5_ia3sw"]
+[ext_resource type="Script" path="res://gunung2.gd" id="5_wy825"]
+[ext_resource type="Texture2D" uid="uid://bl3ycvuj450eh" path="res://parallax_mountain_pack/layers/parallax-mountain-foreground-trees.png" id="6_x1x2v"]
+[ext_resource type="Script" path="res://pohon2.gd" id="7_wp5gy"]
+[ext_resource type="Script" path="res://pohon.gd" id="9_6ab4c"]
 
 [node name="BG" type="ParallaxBackground"]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+[node name="bg" type="ParallaxLayer" parent="."]
 position = Vector2(-3, 0)
+script = ExtResource("1_bdokl")
 
-[node name="Back" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(580.5, 328)
-scale = Vector2(2.9974, 2.73333)
-texture = ExtResource("1_tqbka")
+[node name="Back3" type="Sprite2D" parent="bg"]
+position = Vector2(561, 389)
+scale = Vector2(8.94717, 4.97916)
+texture = ExtResource("2_31imr")
+
+[node name="Back2" type="Sprite2D" parent="bg"]
+position = Vector2(-472.593, 406)
+scale = Vector2(8.253, 4.97916)
+texture = ExtResource("2_31imr")
+
+[node name="Back" type="Sprite2D" parent="bg"]
+position = Vector2(561, 389)
+scale = Vector2(5.23767, 4.97916)
+texture = ExtResource("2_31imr")
+
+[node name="gunung" type="ParallaxLayer" parent="."]
+position = Vector2(-3, 0)
+script = ExtResource("3_261pd")
+
+[node name="Back" type="Sprite2D" parent="gunung"]
+position = Vector2(-391, 154)
+scale = Vector2(4.28546, 4.05417)
+texture = ExtResource("3_u5owf")
+
+[node name="Back2" type="Sprite2D" parent="gunung"]
+position = Vector2(880, 179)
+scale = Vector2(4.28546, 4.05417)
+texture = ExtResource("3_u5owf")
+
+[node name="gunung2" type="ParallaxLayer" parent="."]
+position = Vector2(-3, 0)
+script = ExtResource("5_wy825")
+
+[node name="Back" type="Sprite2D" parent="gunung2"]
+position = Vector2(452, 211)
+scale = Vector2(7.78276, 6.07582)
+texture = ExtResource("4_dywbg")
+
+[node name="pohon2" type="ParallaxLayer" parent="."]
+position = Vector2(-3, 0)
+script = ExtResource("7_wp5gy")
+
+[node name="Back" type="Sprite2D" parent="pohon2"]
+position = Vector2(536, 474)
+scale = Vector2(8.49182, 4.12732)
+texture = ExtResource("5_ia3sw")
+
+[node name="pohon" type="ParallaxLayer" parent="."]
+position = Vector2(-3, 0)
+script = ExtResource("9_6ab4c")
+
+[node name="pohon" type="Sprite2D" parent="pohon"]
+position = Vector2(136, 353)
+scale = Vector2(6.83444, 4.05417)
+texture = ExtResource("6_x1x2v")
